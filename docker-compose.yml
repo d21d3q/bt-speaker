@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  bt:
+    build: .
+    privileged: yes
+    network_mode: host
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+      - ./config.ini:/etc/bt_speaker/config.ini
+      - /dev/snd:/dev/snd
